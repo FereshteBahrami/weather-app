@@ -4,40 +4,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fleur+De+Leah&family=PT+Mono&family=Permanent+Marker&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Mono&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Mono&family=Permanent+Marker&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredericka+the+Great&family=PT+Mono&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredericka+the+Great&family=Mitr:wght@200&family=PT+Mono&family=Permanent+Marker&family=Poiret+One&family=Viga&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/33b6880eb9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>weather App</title>
+
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="currentInfo">
-        <div class="current-row">
-          <div class="col-6 current-left">
-            <div class="wrap">
-              <div class="currentWeatherSummary">
-                <img
-                  src="images/weather.svg"
-                  class="weather-img"
-                  alt="weather-img"
-                />
-                <span class="WeatherSummary" id="Weather-summary">
-                  15°C |°F</span
-                >
-                <h1 class="current-city" id="currentCity">Tehran</h1>
-                <p class="current-city">
-                  humidity: <span class="current-city"> 36% </span>
-                  <br />
+      <div
+        class="card"
+        style="
+          background-image: url('images/background.png');
+          background-position: bottom right;
+          background-size: cover;
+        "
+      >
+        <div class="currentInfo">
+          <div class="current-row">
+            <div class="col-6 current-left">
+              <div class="wrap">
+                <div class="currentWeatherSummary">
+                  <img
+                    src="images/weather.svg"
+                    class="weather-img"
+                    alt="weather-img"
+                  />
+                  <span class="WeatherSummary" id="Weather-summary"> 15</span>
+                  <sup class="celsiusFahrenheit">
+                    <a href="#" class="Celsius-link" id="Celsius-link">°C |</a>
+                    <a href="#" class="Fahrenheit-link" id="Fahrenheit-link"
+                      >°F</a
+                    >
+                  </sup>
+                  <h1 class="current-city" id="currentCity">Tehran</h1>
+                  <p class="current-city">
+                    humidity: <span class="current-city"> 36% </span>
+                    <br />
 
-                  wind speed: 11.1 km/h
-                  <br />
-                </p>
+                    wind speed: 11.1 km/h
+                    <br />
+                  </p>
+                </div>
               </div>
             </div>
           </div>
