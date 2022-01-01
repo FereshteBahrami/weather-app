@@ -13,12 +13,59 @@
     />
 
     <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
-      <a href="" class="btn btn-primary">click me</a>
+      <div class="currentInfo">
+        <div class="current-row">
+          <div class="col-6 current-left">
+            <div class="wrap">
+              <div class="currentWeatherSummary">
+                <img
+                  src="images/weather.svg"
+                  class="weather-img"
+                  alt="weather-img"
+                />
+                <span class="WeatherSummary" id="Weather-summary">
+                  15°C |°F</span
+                >
+                <h1 class="current-city" id="currentCity">Tehran</h1>
+                <p class="current-city">
+                  humidity: <span class="current-city"> 36% </span>
+                  <br />
+
+                  wind speed: 11.1 km/h
+                  <br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="footer">
+      <p class="footer">
+        This project was coded by
+        <a
+          href="https://www.linkedin.com/in/fereshtebahrami"
+          target="_blank"
+          class="linkedin-link"
+        >
+          Fereshte bahrami
+        </a>
+        and is
+        <a
+          href="https://github.com/FereshteBahrami/weather-app-project"
+          target="_blank"
+          class="github-link"
+        >
+          open sourced on GitHub
+        </a>
+      </p>
+    </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
