@@ -67,11 +67,15 @@ a {
 }
 .WeatherSummary {
   position: relative;
+  margin-left: 5px;
   font-family: "Anton", sans-serif;
   top: 15px;
   font-weight: 300;
   font-size: 35px;
   color: white;
+}
+.celsiusFahrenheit {
+  margin-left: 0px;
 }
 .current-city {
   color: white;
@@ -80,4 +84,23 @@ a {
   padding-left: 0;
   padding-top: 10px;
   width: 100%;
+}
+.footer {
+  display: block;
+  margin-top: 0 auto;
+  padding-top: 0;
+  text-align: center;
+  color: rgb(184, 15, 15);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.5;
+  font-size: 10px;
+}
+
+.linkedin-link {
+  text-decoration: none;
+  color: #098ea0;
+}
+.github-link {
+  text-decoration: none;
+  color: #098ea0;
 }
