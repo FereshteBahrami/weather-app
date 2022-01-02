@@ -1,15 +1,23 @@
+function fomatDate(timesTemp) {
+  //calculate the date
+  return "Friday 05:00";
+}
+
 function displayTemperature(response) {
+  console.log(response.data);
   console.log(response.data.main.temp);
   let temperatureElemnt = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#Weather-summary");
   temperature.innerHTML = `${temperatureElemnt}`;
   let h1 = document.querySelector("#currentCity");
   h1.innerHTML = response.data.name;
-  let description = document.querySelector("#Weather-description");
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = fomatDate(response.data.dt * 1000);
+  let description = document.querySelector("#weather-description");
   description.innerHTML = response.data.weather[0].description;
-  let humidityElemnt = response.data.main.humidity;
+  let humidityElement = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${humidityElemnt}%`;
+  humidity.innerHTML = `${humidityElement}%`;
   let windSpeedElement = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${windSpeedElement} km/h`;

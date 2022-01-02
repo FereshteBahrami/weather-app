@@ -16,11 +16,15 @@ p {
   font-family: "Unica One", cursive;
 }
 
-h5 {
+ul {
+  list-style: none;
   font-family: "Viga", sans-serif;
   color: white;
   font-size: 17px;
   text-transform: capitalize;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 a {
   text-decoration: none;
