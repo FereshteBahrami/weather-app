@@ -46,6 +46,7 @@
       src="https://kit.fontawesome.com/33b6880eb9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>weather App</title>
 
     <link rel="stylesheet" href="src/style.css" />
@@ -78,11 +79,21 @@
                     >
                   </sup>
                   <h1 class="current-city" id="currentCity">Tehran</h1>
+                  <h5 id="date">
+                    <div
+                      class="WeatherDescription"
+                      id="Weather-description"
+                    ></div>
+                  </h5>
                   <p class="current-city">
-                    humidity: <span class="current-city"> 36% </span>
+                    humidity:
+                    <span class="current-city" id="humidity"> 36% </span>
                     <br />
 
-                    wind speed: 11.1 km/h
+                    wind speed:
+                    <span class="current-city" id="wind-speed">
+                      11.1 km/h
+                    </span>
                     <br />
                   </p>
                 </div>
