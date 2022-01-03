@@ -46,7 +46,17 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = "33bb3131faab8b8de402456e4193a0d1";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "33bb3131faab8b8de402456e4193a0d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+//display the searched city information
+function handelSearch(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#showCity");
+  search(searchInput.value);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+let form = document.querySelector("#searchCities");
+form.addEventListener("click", handelSearch);
