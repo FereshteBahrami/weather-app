@@ -3,6 +3,7 @@ body {
 }
 h1 {
   text-transform: capitalize;
+  font-size: 38px;
 }
 h1,
 h3 {
@@ -88,11 +89,11 @@ a {
   position: relative;
   border: none;
   border-radius: 20px;
-  width: 80%;
-  height: 236px;
+  width: 90%;
+  height: 238px;
   margin: 0 auto;
-  top: 20px;
-  left: 15px;
+  top: 19px;
+  left: 10px;
   text-align: center;
   opacity: 1;
 
@@ -109,7 +110,7 @@ a {
   text-align: center;
   bottom: 0;
 }
-.WeatherSummary {
+.currentTemperature {
   position: relative;
   margin-left: 5px;
   font-family: "Anton", sans-serif;
@@ -118,15 +119,22 @@ a {
   font-size: 35px;
   color: white;
 }
+.currentWeatherSummary .active {
+  color: white;
+  cursor: default;
+}
+.currentWeatherSummary .active:hover {
+  text-decoration: none;
+}
 .celsiusFahrenheit {
   margin-left: 0px;
   font-size: 16px;
+  color: white;
 }
 .current-city {
   color: white;
   margin: 0 auto;
   text-align: center;
-  padding-left: 0;
   padding-top: 10px;
   width: 100%;
 }

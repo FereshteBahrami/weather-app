@@ -24,22 +24,24 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  let temperatureElemnt = Math.round(response.data.main.temp);
-  let temperature = document.querySelector("#Weather-summary");
-  temperature.innerHTML = `${temperatureElemnt}`;
-  let h1 = document.querySelector("#currentCity");
-  h1.innerHTML = response.data.name;
+  let temperature = document.querySelector("#current-temperature");
   let description = document.querySelector("#weather-description");
-  description.innerHTML = response.data.weather[0].description;
+  let h1 = document.querySelector("#currentCity");
   let humidityElement = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${humidityElement}%`;
   let windSpeedElement = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = `${windSpeedElement} km/h`;
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
+
+  temperature.innerHTML = Math.round(response.data.main.temp);
+  h1.innerHTML = response.data.name;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = `${humidityElement}%`;
+  windSpeed.innerHTML = `${windSpeedElement} km/h`;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -51,6 +53,7 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
 //display the searched city information
 function handelSearch(event) {
   event.preventDefault();
@@ -60,3 +63,36 @@ function handelSearch(event) {
 
 let form = document.querySelector("#searchCities");
 form.addEventListener("click", handelSearch);
+
+//celsius to farenheit conversion
+function displayFarenheitTemperature(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  //remove the active class from the celsius link
+  celsiusLink.classList.remove("active");
+  //add the active class to the  farenheit link
+  farenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+let celsiusTemperature = null;
+
+let farenheitLink = document.querySelector("#fahrenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+//farenheit to celsius conversion
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  //add the active class to the celsius link
+  celsiusLink.classList.add("active");
+  //remove the active class from the farenheit link
+  farenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+// Load Page
+search("tehran");
