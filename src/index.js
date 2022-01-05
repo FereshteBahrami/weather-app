@@ -24,6 +24,7 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
+  console.log(response.data);
   let temperature = document.querySelector("#current-temperature");
   let description = document.querySelector("#weather-description");
   let h1 = document.querySelector("#currentCity");
@@ -96,3 +97,19 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 // Load Page
 search("tehran");
+
+// search the weather information of current location
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "33bb3131faab8b8de402456e4193a0d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemperature);
+}
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let currentButton = document.querySelector("#btnCurrent");
+currentButton.addEventListener("click", getCurrentPosition);
