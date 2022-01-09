@@ -177,10 +177,18 @@ a {
   font-family: "Fleur De Leah", cursive;
   text-align: center;
   font-weight: bold;
+  padding-top: 25px;
+}
+#temp-max {
+  margin-bottom: 0px;
 }
 
-.weather-icon {
-  color: white;
+#weather-icon {
+  display: block;
+  margin: 0 auto;
+}
+#temp-min {
+  margin-top: 0px;
 }
 
 .footer {

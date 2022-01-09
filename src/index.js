@@ -124,29 +124,44 @@ function getCurrentPosition() {
 let currentButton = document.querySelector("#btnCurrent");
 currentButton.addEventListener("click", getCurrentPosition);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 // fill forecast row
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = ` <div class="box">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
                 <div class="rectangle" id="1">
-                  <h3 class="rectangle-title">${day}</h3>
-                  <h4>
-                    15°C <br />
-                    <i class="fas fa-sun weather-Tomorrow" style="color: white"></i>
-                    <br />
-                    6°C
+                  <h3 class="rectangle-title">${formatDay(forecastDay.dt)}</h3>
+                   <br />
+                  <h4 class="forecast-temp" id="temp-max">
+                    ${Math.round(forecastDay.temp.max)}°C  </h4> 
+                    <img src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" 
+                    class="weather-img" 
+                    alt="weather-img" id="weather-icon"  />
+                   <h4 class="forecast-temp" id="temp-min"> ${Math.round(
+                     forecastDay.temp.min
+                   )}°C
                   </h4>
                 </div>
               </div>
               
               `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
