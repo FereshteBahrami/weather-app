@@ -141,7 +141,7 @@ a {
 
 .Container-Forecast {
   position: relative;
-  max-width: 450px;
+  max-width: 425px;
   width: 100%;
   height: 200px;
   margin: 0 auto;
@@ -158,12 +158,12 @@ a {
 
 .rectangle {
   height: 200px;
-  min-width: 75px;
+  min-width: 72.5px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5px;
+  margin: 6px auto;
   opacity: 1;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.7),
     -7px -7px 20px rgba(255, 255, 255, 0.7),
@@ -183,9 +183,6 @@ a {
   color: white;
 }
 
-.weather-Tomorrow {
-  color: yellow;
-}
 .footer {
   display: block;
   margin-top: 0 auto;

@@ -95,9 +95,6 @@ function displayCelsiusTemperature(event) {
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-// Load Page
-search("tehran");
-
 // search the weather information of current location
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -113,3 +110,35 @@ function getCurrentPosition() {
 
 let currentButton = document.querySelector("#btnCurrent");
 currentButton.addEventListener("click", getCurrentPosition);
+
+// fill forecast row
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = ` <div class="box">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="rectangle" id="1">
+                  <h3 class="rectangle-title">${day}</h3>
+                  <h4>
+                    15°C <br />
+                    <i class="fas fa-sun weather-Tomorrow" style="color: white"></i>
+                    <br />
+                    6°C
+                  </h4>
+                </div>
+              </div>
+              
+              `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+// Load Page
+search("tehran");
+displayForecast();
