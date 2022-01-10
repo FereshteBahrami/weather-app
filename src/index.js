@@ -144,19 +144,19 @@ function displayForecast(response) {
         forecastHTML +
         `
                 <div class="rectangle" id="1">
-                  <h3 class="rectangle-title">${formatDay(forecastDay.dt)}</h3>
+                  <h4 class="rectangle-title">${formatDay(forecastDay.dt)}</h3>
                    <br />
-                  <h4 class="forecast-temp" id="temp-max">
-                    ${Math.round(forecastDay.temp.max)}°C  </h4> 
+                  <h6 class="forecast-temp" id="temp-max">
+                    ${Math.round(forecastDay.temp.max)}°C  </h6> 
                     <img src="http://openweathermap.org/img/wn/${
                       forecastDay.weather[0].icon
                     }@2x.png" 
                     class="weather-img" 
                     alt="weather-img" id="weather-icon"  />
-                   <h4 class="forecast-temp" id="temp-min"> ${Math.round(
+                   <h6 class="forecast-temp" id="temp-min"> ${Math.round(
                      forecastDay.temp.min
                    )}°C
-                  </h4>
+                  </h6>
                 </div>
               </div>
               
