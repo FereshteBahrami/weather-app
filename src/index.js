@@ -80,21 +80,21 @@ function backgroundImage(response) {
 
     case "09d":
       backgroundElement.style.backgroundImage = "url(images/rain.jpg)";
-      backgroundElement.style.backgroundPosition = "center";
+      backgroundElement.style.backgroundPosition = "bottom right";
       break;
 
     case "09n":
       backgroundElement.style.backgroundImage = "url(images/rain.jpg)";
-      backgroundElement.style.backgroundPosition = "center";
+      backgroundElement.style.backgroundPosition = "bottom right";
       break;
 
     case "10d":
       backgroundElement.style.backgroundImage = "url(images/rain.jpg)";
-      backgroundElement.style.backgroundPosition = "center";
+      backgroundElement.style.backgroundPosition = "bottom right";
       break;
     case "10n":
       backgroundElement.style.backgroundImage = "url(images/rain.jpg)";
-      backgroundElement.style.backgroundPosition = "center";
+      backgroundElement.style.backgroundPosition = "bottom right";
       break;
 
     case "11d":
